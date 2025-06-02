@@ -161,7 +161,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/images/heart.svg') no-repeat center center;
+  background: url('/images/heart.png') no-repeat center center;
   background-size: contain;  /* Adjust the heart background image */
   background-position: center center;
   margin: 0 auto; /* This centers the drop zone itself horizontally */
