@@ -1,0 +1,245 @@
+/* Font styles */
+@font-face {
+  font-family: 'Paragon-Regular';
+  src: url('./Paragon-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'P-ACR-AGON-Regular';
+  src: url('./P-ACR-AGON-Regular.otf') format('opentype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Paragon-Regular', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw; /* Ensures container spans the full viewport width */
+  height: 100vh; /* Full height of the viewport */
+}
+
+
+.title {
+  font-family: 'P-ACR-AGON-Regular';
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 3%;
+}
+#filter-container {
+  margin-left: 3.5%;
+  margin-top: 16%;
+}
+/* Filters */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 5px;
+}
+
+.filter-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 8px 8px 5px 0;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.filter-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 100px;
+  font-size: 1em;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.filter-btn[data-color]:hover {
+  background-color: var(--bg);
+}
+
+/* Sock Grid */
+#sock-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2vw;
+  margin-top: 20px;
+  margin-left: 3%;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+
+/* Sock Card Layout */
+.sock-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the content inside */
+  text-align: left;
+  width: 100%;
+}
+
+.sock-card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+}
+
+
+.sock-card img.hovered {
+  transform: scale(1.5);  /* Scale the image on hover */
+  transition: 0.5s;
+  z-index: 10;
+  position: relative;
+}
+
+/* Info column: Stack p (country + time lost) at the top, note at the bottom */
+.sock-card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensures space between elements */
+  height: 200px; /* Match image height */
+  flex: 1; /* Take remaining space */
+}
+
+/* p - Country and Time Lost */
+.sock-card p {
+  font-size: 14px;
+  color: #000; /* Default text color */
+  margin-top: 5px; /* Align it to the top of the container */
+  margin-bottom: 8x; /* Added some space between the country/time lost */
+}
+
+/* note - Bottom text */
+.sock-card note {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: normal;
+}
+
+#perfect-pair-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adds some space between the heart image and button */
+}
+
+#headingpp{
+  margin-top: 20px;
+  text-align: center;
+}
+/* Pairing Zone */
+#drop-zone-text {
+  font-size: 1em;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #000000;
+}
+ 
+#drop-zone {
+  position: relative;
+  width: 10em;  /* Size of the heart-shaped drop zone */
+  height: 10em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/heart.svg') no-repeat center center;
+  background-size: contain;  /* Adjust the heart background image */
+  background-position: center center;
+  margin: 0 auto; /* This centers the drop zone itself horizontally */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#drop-zone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Makes sure the image maintains its aspect ratio while fitting inside */
+  max-width: 120px; /* Ensures the image doesn't get too large */
+  max-height: 100%; 
+  margin: 0 -100px;/* Ensures the image doesn't exceed the drop zone height */
+  object-position: center; /* Center the image within the drop zone */
+  z-index: 2; /* Keeps the images on top of the heart shape */
+}
+
+/* Popup */
+#popup {
+  font-family: 'Paragon-Regular', sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: white;
+  padding: 30px;
+  border: 2px solid rgb(255, 0, 0);
+  display: none;
+  align-items: flex-end;
+  z-index: 999;
+}
+.yesno {
+  font-family: 'Paragon-Regular', sans-serif;
+  font-size: 1em;
+  
+}
+
+#congrats-btn {
+  font-family: 'Paragon-Regular';
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  border: 2px solid red; /* Red border */
+  background-color: transparent;
+  color: rgb(4, 4, 4);
+  padding: 10px 15px;
+  border-radius: 100px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#congrats-btn:hover {
+  background-color: red; /* Red background on hover */
+  color: white; /* Change text to white on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+/* Default Layout */
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#left-panel {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  
+}
+
+#right-panel {
+  flex: 0 0 300px; /* Fixed size with maximum width of 300px */
+  max-width: 300px; /* Ensure it never grows beyond 300px */
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

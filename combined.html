@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sock Matcher Directory</title>
+  <script src="p5.min.js"></script>
+  <link rel="stylesheet" href="combined.css" />
+  
+</head>
+<body>
+  <!-- Left: Sock Directory -->
+  <div id="left-panel">
+    <div class="title">The Missing Sock Directory</div>
+    <div id="filter-container"></div>
+    <div id="sock-container"></div>
+  </div>
+
+  <!-- Right: Pairing Area -->
+  <div id="right-panel">
+    <div>
+      <h2 id="headingpp">Your Perfect Pair</h2>
+     
+<div id="drop-zone"> </div>
+<div id="perfect-pair-section">
+  <button id="congrats-btn">I have found <br>the perfect pair!</button>
+</div>
+</div>
+    <!-- Add this div above the pairing box -->
+<div id="drop-zone-text">No one should be forgotten, left untouched for months, or labeled “unwanted.” These single socks didn’t find their match the first time — but they’re still ready to be worn, loved, and paired again. Help them find their perfect partner and bring them back to life. Because, like people, socks are better together.</div>
+
+<!-- Heart Shape SVG or image inside drop zone -->
+
+    
+
+  <!-- Pop-up -->
+  <div id="popup">
+    <p>Congratulations! You have found the perfect pair.<br><br>
+    Do you want me to contact the sock owners to make this dream couple a reality?</p>
+    <button class="yesno" onclick="closePopup()">no</button>
+    <button class="yesno" onclick="closePopup()">yes!</button>
+  </div>
+
+  <script src="combined.js"></script>
+</body>
+</html>
