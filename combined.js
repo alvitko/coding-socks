@@ -5,7 +5,7 @@ let zone;
 
 
 function preload() {
-  dataset = loadTable('socks.csv', 'csv', 'header');
+ dataset = loadTable('./socks.csv', 'csv', 'header');
 }
 
 function setup() {
